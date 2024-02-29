@@ -15,8 +15,8 @@ fetch(url, init)
     .then ((data) => {
         movies = data.movies
         const movieFind = movies.find( movie => movie.id == id)
-        const $main = document.getElementById(`main`)
-        $main.innerHTML = `
+        const main = document.getElementById(`main`)
+        main.innerHTML = `
     <div class="flex flex-col items-center py-10 text-white-style">
         <article class="flex flex-wrap justify-center mt-16">
 

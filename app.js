@@ -31,21 +31,21 @@ fetch(url, init)
   .catch((err) => console.log(`error`, err));
 
 input.addEventListener(`input`, () => {
-  const titleFilters = porNombre(movies, input.value);
-  const movieFilters = porGenero(titleFilters, select.value);
+  const tituloFiltro = porNombre(movies, input.value);
+  const peliculaFiltro = porGenero(tituloFiltro, select.value);
   if (select.value === "todos") {
-    imprimir(titleFilters, divContenedor, generarCard);
+    imprimir(tituloFiltro, divContenedor, generarCard);
   } else {
-    imprimir(movieFilters, divContenedor, generarCard);
+    imprimir(peliculaFiltro, divContenedor, generarCard);
   }
 });
 
 select.addEventListener("change", () => {
-  const titleFilters = porNombre(movies, input.value);
-  const movieFilters = porGenero(titleFilters, select.value);
+  const tituloFiltro = porNombre(movies, input.value);
+  const peliculaFiltro = porGenero(tituloFiltro, select.value);
   if (select.value === "todos") {
-    imprimir(titleFilters, divContenedor, generarCard);
+    imprimir(tituloFiltro, divContenedor, generarCard);
   } else {
-    imprimir(movieFilters, divContenedor, generarCard);
+    imprimir(peliculaFiltro, divContenedor, generarCard);
   }
 });
