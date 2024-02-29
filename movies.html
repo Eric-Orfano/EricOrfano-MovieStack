@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./image/Moviestack_favicon.png" type="image/x-icon">
+    <title>Movies</title>
+</head>
+
+<header class="flex items-center justify-between p-2 bg-gray-800 text-white h-24">
+    <div class="flex items-center">
+        <div class="mr-2">
+            <img src="./image/Moviestack_favicon.png" alt="" class="w-24 h-24">
+        </div>
+        <img src="./image/Moviestack_logotipo1.png" alt="" class="w-48 h-42">
+    </div>
+    <div class="flex">
+        <a class="p-2 mx-1 border border-white-700 text-white-700 bg-white-500 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" href="./index.html">HOME</a>
+        <a class="p-2 mx-1 border border-white-700 text-white-700 bg-red-500 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" href="#">MOVIES</a>
+        <a class="p-2 mx-1 border border-white-700 text-white-700 bg-white-500 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" href="#">FAVS</a>
+    </div>
+</header>
+
+<body>    
+    <main class="bg-gray-800 flex flex-col">
+        <h2 class="flex justify-center text-9xl text-black bg-white ml-10 mr-10 font-sans">MOVIES</h2>
+        
+        <searche class="flex flex-wrap gap-5 justify-center mt-5">
+            <div class="w-3/4 flex justify-center relative ">
+                <input id="input" class="w-full h-9 rounded ps-2 text-black" placeholder="Ej: Monsters, Inc." type="text">
+                <img class="h-6 absolute top-1 right-1" src="./image/search.png" alt="logo de lupa">
+            </div>
+                <select class="h-9 rounded" id="select" onchange="">
+                    <option value="todos" selected>Genres</option>
+                </select>`
+        </searche>
+
+    </main>
+
+    <script type="module" src="/app.js"></script>
+</body>
+
+<footer class= "flex justify-center text-4xl bg-gray-600 text-white font-sans py-4">MindHub - Eric Orfano</footer>
+
+</html>
