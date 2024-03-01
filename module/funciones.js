@@ -29,7 +29,7 @@ function crearFiltro(movies, elemento) {
   genresUnique.forEach((genre) => {
     template += `<option value="${genre}">${genre}</option>`;
   });
-  elemento.innerHTML = `<option value="todos">Genres</option>` + template;
+  elemento.innerHTML = `<option value="todos" selected>Genres</option>` + template;
   console.log(genresUnique);
 }
 
