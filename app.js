@@ -49,3 +49,6 @@ select.addEventListener("change", () => {
     imprimir(peliculaFiltro, divContenedor, generarCard);
   }
 });
+
+
+

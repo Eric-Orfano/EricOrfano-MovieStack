@@ -1,4 +1,11 @@
-export { imprimir, generarCard, crearFiltro, porGenero, porNombre };
+export {
+  imprimir,
+  generarCard,
+  crearFiltro,
+  porGenero,
+  porNombre,
+  botonesActualizados,
+};
 
 function imprimir(listaMovies, elemento, fn) {
   let template = "";
@@ -11,7 +18,7 @@ function imprimir(listaMovies, elemento, fn) {
 function generarCard(movie) {
   return `
         <article class="relative flex flex-wrap flex-col rounded-lg border p-5 text-white w-80 snap-normal justify-between">
-        <button id="heartButton" onclick="toggleHeart()" class="absolute top-0 right-0">❤️</button>
+        <button data-cardid="${movie.id}" data-fav="botonFavorito" class=" bg-gray-200 text-xl bg-opacity-50 border-2 border-solid border-black absolute rounded right-[-15px] top-[-15px]" type="button" >❤️</button>
         <img class="h-44 rounded-md" src="https://moviestack.onrender.com/static/${movie.image}" alt="Imagen de ${movie.title}">
         <h2 class=" font-bold text-xl w-full">${movie.title}</h2>
         <h3 class="text-gray-500 underline text-xl">${movie.tagline}</h3>
@@ -29,7 +36,8 @@ function crearFiltro(movies, elemento) {
   genresUnique.forEach((genre) => {
     template += `<option value="${genre}">${genre}</option>`;
   });
-  elemento.innerHTML = `<option value="todos" selected>Genres</option>` + template;
+  elemento.innerHTML =
+    `<option value="todos" selected>Genres</option>` + template;
   console.log(genresUnique);
 }
 
@@ -43,3 +51,15 @@ function porGenero(movies, genre) {
   return movies.filter((movie) => movie.genres.includes(genre));
 }
 
+function botonesActualizados(favorites) {
+  const botonesFavorito = document.querySelectorAll("[data-fav]");
+
+  botonesFavorito.forEach((boton) => {
+    const IdCard = boton.dataset.cardid;
+    if (favorites.includes(IdCard)) {
+      boton.dataset.fav = "botonLike";
+    } else {
+      boton.dataset.fav = "botonFavorito";
+    }
+  });
+}
